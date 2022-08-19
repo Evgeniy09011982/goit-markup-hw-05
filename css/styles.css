@@ -21,6 +21,9 @@ body {
   color: var(--main-txt-cl);
 }
 
+.no-scroll {
+  overflow: hidden;
+}
 /* Reset styles */
 
 h1,
@@ -148,6 +151,22 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
   display: block;
+
+  /* значення властивості, для якої буде здійснено плавний перехід, 
+  за заданий час якщо не встановити властивості переходу, то застосується all */
+
+  transition-property: color;
+
+  /* час за який буде здійснено перехід від одного значення до іншого */
+
+  transition-duration: 250ms;
+
+  /* функція розподілення часу пропорційно до швидкості переходу стану */
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* затримка перед початком переходу */
+  transition-delay: 0s;
 }
 
 .header-link:hover,
@@ -174,6 +193,22 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
   display: block;
+
+  /* значення властивості, для якої буде здійснено плавний перехід, 
+  за заданий час якщо не встановити властивості переходу, то застосується all */
+
+  transition-property: color;
+
+  /* час за який буде здійснено перехід від одного значення до іншого */
+
+  transition-duration: 250ms;
+
+  /* функція розподілення часу пропорційно до швидкості переходу стану */
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* затримка перед початком переходу */
+  transition-delay: 0s;
 }
 
 .contacts-link-tel {
@@ -186,6 +221,22 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
   display: block;
+
+  /* значення властивості, для якої буде здійснено плавний перехід, 
+  за заданий час якщо не встановити властивості переходу, то застосується all */
+
+  transition-property: color;
+
+  /* час за який буде здійснено перехід від одного значення до іншого */
+
+  transition-duration: 250ms;
+
+  /* функція розподілення часу пропорційно до швидкості переходу стану */
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* затримка перед початком переходу */
+  transition-delay: 0s;
 }
 
 .contacts-icon {
@@ -250,6 +301,22 @@ img {
   min-width: 200px;
   min-height: 50px;
   padding: 10px 32px;
+
+  /* значення властивості, для якої буде здійснено плавний перехід, 
+  за заданий час якщо не встановити властивості переходу, то застосується all */
+
+  transition-property: background-color, box-shadow;
+
+  /* час за який буде здійснено перехід від одного значення до іншого */
+
+  transition-duration: 250ms;
+
+  /* функція розподілення часу пропорційно до швидкості переходу стану */
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* затримка перед початком переходу */
+  transition-delay: 0s;
 }
 
 /* Hero portfolio section */
@@ -286,6 +353,22 @@ img {
   padding: 6px 22px;
   border: transparent;
   border-radius: 4px;
+
+  /* значення властивості, для якої буде здійснено плавний перехід, 
+  за заданий час якщо не встановити властивості переходу, то застосується all */
+
+  transition-property: color, background-color, box-shadow;
+
+  /* час за який буде здійснено перехід від одного значення до іншого */
+
+  transition-duration: 250ms;
+
+  /* функція розподілення часу пропорційно до швидкості переходу стану */
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* затримка перед початком переходу */
+  transition-delay: 0s;
 }
 
 .button-current:hover,
@@ -305,6 +388,59 @@ img {
 
 .page-item {
   flex-basis: calc((100% - 30px * 2) / 3);
+
+  /* значення властивості, для якої буде здійснено плавний перехід, 
+  за заданий час якщо не встановити властивості переходу, то застосується all */
+
+  transition-property: box-shadow;
+
+  /* час за який буде здійснено перехід від одного значення до іншого */
+
+  transition-duration: 250ms;
+
+  /* функція розподілення часу пропорційно до швидкості переходу стану */
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* затримка перед початком переходу */
+  transition-delay: 0s;
+}
+
+.page-project {
+  position: relative;
+  overflow: hidden;
+}
+.page-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.overlay {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(100%);
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+
+  width: 100%;
+  height: 100%;
+  padding: 40px 5px;
+  background-color: rgba(33, 150, 243, 0.9);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-item:hover .overlay {
+  transform: translateY(0);
+}
+.overlay-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  text-align: left;
 }
 
 .page-item:hover {
@@ -415,6 +551,33 @@ img {
   gap: 30px;
 }
 
+.image-item {
+  position: relative;
+}
+
+.image-description {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 370px;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.image-description-text {
+  font-family: var(--main-font);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--secondary-txt-cl);
+}
+
 /* Team section */
 
 .team {
@@ -513,6 +676,22 @@ img {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   box-sizing: border-box;
+
+  /* значення властивості, для якої буде здійснено плавний перехід, 
+  за заданий час якщо не встановити властивості переходу, то застосується all */
+
+  transition-property: color, border-color;
+
+  /* час за який буде здійснено перехід від одного значення до іншого */
+
+  transition-duration: 250ms;
+
+  /* функція розподілення часу пропорційно до швидкості переходу стану */
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* затримка перед початком переходу */
+  transition-delay: 0s;
 }
 
 .clients-link:hover,
@@ -575,6 +754,22 @@ img {
   line-height: calc(24 / 14);
   letter-spacing: 0.03em;
   color: var(--secondary-txt-cl);
+
+  /* значення властивості, для якої буде здійснено плавний перехід, 
+  за заданий час якщо не встановити властивості переходу, то застосується all */
+
+  transition-property: color;
+
+  /* час за який буде здійснено перехід від одного значення до іншого */
+
+  transition-duration: 250ms;
+
+  /* функція розподілення часу пропорційно до швидкості переходу стану */
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* затримка перед початком переходу */
+  transition-delay: 0s;
 }
 
 .footer-item {
@@ -588,6 +783,22 @@ img {
   line-height: calc(24 / 14);
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+
+  /* значення властивості, для якої буде здійснено плавний перехід, 
+  за заданий час якщо не встановити властивості переходу, то застосується all */
+
+  transition-property: color;
+
+  /* час за який буде здійснено перехід від одного значення до іншого */
+
+  transition-duration: 250ms;
+
+  /* функція розподілення часу пропорційно до швидкості переходу стану */
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* затримка перед початком переходу */
+  transition-delay: 0s;
 }
 
 .footer-link-tel {
@@ -597,6 +808,22 @@ img {
   line-height: calc(24 / 14);
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+
+  /* значення властивості, для якої буде здійснено плавний перехід, 
+  за заданий час якщо не встановити властивості переходу, то застосується all */
+
+  transition-property: color;
+
+  /* час за який буде здійснено перехід від одного значення до іншого */
+
+  transition-duration: 250ms;
+
+  /* функція розподілення часу пропорційно до швидкості переходу стану */
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* затримка перед початком переходу */
+  transition-delay: 0s;
 }
 
 .footer-link-mail:hover,
@@ -641,10 +868,42 @@ img {
   border-radius: 50%;
   outline: 2px solid red;
   outline-offset: -2px;
+
+  /* значення властивості, для якої буде здійснено плавний перехід, 
+  за заданий час якщо не встановити властивості переходу, то застосується all */
+
+  transition-property: background-color;
+
+  /* час за який буде здійснено перехід від одного значення до іншого */
+
+  transition-duration: 250ms;
+
+  /* функція розподілення часу пропорційно до швидкості переходу стану */
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* затримка перед початком переходу */
+  transition-delay: 0s;
 }
 
 .footer-socials-icon {
   fill: currentColor;
+
+  /* значення властивості, для якої буде здійснено плавний перехід, 
+  за заданий час якщо не встановити властивості переходу, то застосується all */
+
+  transition-property: fill;
+
+  /* час за який буде здійснено перехід від одного значення до іншого */
+
+  transition-duration: 250ms;
+
+  /* функція розподілення часу пропорційно до швидкості переходу стану */
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* затримка перед початком переходу */
+  transition-delay: 0s;
 }
 
 .footer-socials-link:hover {
@@ -674,6 +933,22 @@ img {
   border-radius: 50%;
   outline: 2px solid red;
   outline-offset: -2px;
+
+  /* значення властивості, для якої буде здійснено плавний перехід, 
+  за заданий час якщо не встановити властивості переходу, то застосується all */
+
+  transition-property: background-color, color;
+
+  /* час за який буде здійснено перехід від одного значення до іншого */
+
+  transition-duration: 250ms;
+
+  /* функція розподілення часу пропорційно до швидкості переходу стану */
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* затримка перед початком переходу */
+  transition-delay: 0s;
 }
 .footer-socials-link {
   display: flex;
@@ -686,15 +961,47 @@ img {
   border-radius: 50%;
   outline: 2px solid red;
   outline-offset: -2px;
+
+  /* значення властивості, для якої буде здійснено плавний перехід, 
+  за заданий час якщо не встановити властивості переходу, то застосується all */
+
+  transition-property: background-color;
+
+  /* час за який буде здійснено перехід від одного значення до іншого */
+
+  transition-duration: 250ms;
+
+  /* функція розподілення часу пропорційно до швидкості переходу стану */
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* затримка перед початком переходу */
+  transition-delay: 0s;
 }
+
 .footer-socials-link:hover,
 .footer-socials-link:focus {
   background-color: #2196f3;
-  /* color: #ffffff; */
 }
 
 .socials-icon {
   fill: currentColor;
+
+  /* значення властивості, для якої буде здійснено плавний перехід, 
+  за заданий час якщо не встановити властивості переходу, то застосується all */
+
+  transition-property: fill;
+
+  /* час за який буде здійснено перехід від одного значення до іншого */
+
+  transition-duration: 250ms;
+
+  /* функція розподілення часу пропорційно до швидкості переходу стану */
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* затримка перед початком переходу */
+  transition-delay: 0s;
 }
 
 .socials-link:hover,
@@ -708,3 +1015,65 @@ img {
 }
 
 /* Socials icon end */
+
+/* Modal window */
+
+.backdrop {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  /* властивості за змовчуванням */
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+
+  transition: opacity 600ms ease-out, visibility 600ms ease-out;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 528px;
+  height: 581px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1) rotate(0);
+  opacity: 1;
+  transition: transform 400ms ease-in-out 200ms, opacity 400ms ease-in-out 200ms;
+}
+
+.backdrop.is-hidden .modal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.3) rotate(1turn);
+}
+
+.modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #000000;
+}
